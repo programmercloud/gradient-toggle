@@ -1,6 +1,6 @@
 *,
-:after,
-:before {
+*::after,
+*::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -22,7 +22,7 @@ body {
   background: #cfcfcf;
 }
 
-.switch:before {
+.switch::before {
   content: "";
   z-index: -1;
   position: absolute;
@@ -35,7 +35,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.switch:hover:before {
+.switch:hover::before {
   background: #ddd;
 }
 
@@ -63,8 +63,8 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 840px;
   height: 100%;
+  width: 840px;
   background: linear-gradient(
     90deg,
     #00c9b2 0,
@@ -126,22 +126,22 @@ body {
   transform: rotate(45deg) scale(1) translateZ(0);
 }
 
-.switch-inner:after,
-.switch-inner:before {
+.switch-inner::after,
+.switch-inner::before {
   content: "";
   position: absolute;
   border-radius: 4px;
   background: #fff;
 }
 
-.switch-inner:before {
+.switch-inner::before {
   left: 0;
   bottom: 0;
   width: 100%;
   height: 9px;
 }
 
-.switch-inner:after {
+.switch-inner::after {
   right: 0;
   top: 0;
   width: 9px;
@@ -164,8 +164,8 @@ body {
   transform: translate3d(-125px, 0, 0);
 }
 
-.switch-off:after,
-.switch-off:before {
+.switch-off::after,
+.switch-off::before {
   content: "";
   position: absolute;
   left: 0;
@@ -178,25 +178,25 @@ body {
   transition: transform 0.25s 0.25s;
 }
 
-.checkbox:checked ~ .label .switch-off:after,
-.checkbox:checked ~ .label .switch-off:before {
+.checkbox:checked ~ .label .switch-off::after,
+.checkbox:checked ~ .label .switch-off::before {
   transition-delay: 0s;
 }
 
-.switch-off:before {
+.switch-off::before {
   transform: rotate(45deg) scaleX(1) translateZ(0);
 }
 
-.checkbox:checked ~ .label .switch-off:before {
+.checkbox:checked ~ .label .switch-off::before {
   transform: rotate(45deg) scaleX(0) translateZ(0);
 }
 
-.switch-off:after {
+.switch-off::after {
   transition-timing-function: cubic-bezier(0.67, -0.16, 0.47, 1.61);
   transform: rotate(-45deg) scaleX(1) translateZ(0);
 }
 
-.checkbox:checked ~ .label .switch-off:after {
+.checkbox:checked ~ .label .switch-off::after {
   transition-timing-function: ease;
   transform: rotate(-45deg) scaleX(0) translateZ(0);
 }
